@@ -354,9 +354,15 @@ def project_completed(pid):
 # ----------------------------------------------------
 # RUN
 # ----------------------------------------------------
-if __name__ == "__main__":
+if _name_ == "_main_":
     with app.app_context():
         db.create_all()
-
-    # IMPORTANT FOR RENDER: disable eventlet and use threading
-    socketio.run(app, host="0.0.0.0", port=5000, debug=False, use_reloader=False)
+    
+    # IMPORTANT FOR DEPLOY ON RENDER
+    socketio.run(
+        app,
+        host="0.0.0.0",
+        port=5000,
+        debug=False,
+        use_reloader=False
+    )
