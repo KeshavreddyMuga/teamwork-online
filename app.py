@@ -359,10 +359,4 @@ if _name_ == "_main_":
         db.create_all()
     
     # IMPORTANT FOR DEPLOY ON RENDER
-    socketio.run(
-        app,
-        host="0.0.0.0",
-        port=5000,
-        debug=False,
-        use_reloader=False
-    )
+    socketio.run(app, host="0.0.0.0", port=5000, debug=False, use_reloader=False)
